@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+$primary:       #ffffff;
+$secondary:     #DD5903;
+$dark:#292929;
+$black:#1F1F1F;
+$gray:#777777;
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// .navbar{
+//   background-color: aqua;
+// }
+
+// :root{
+//   --primary-color:red
+// }

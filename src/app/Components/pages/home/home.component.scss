@@ -1,0 +1,23 @@
+.favorite
+{
+  color: red;
+  &-not{
+    color: gray;
+  }
+}
+
+.food_menu{
+  background-color: #F7F7F7;
+}
+.food :hover img {
+transform: scale(0.95);
+}
+
+.tag{
+  color: black;
+  background-color: #fff;
+  &:hover{
+    background-color: #DD5903;
+    color:#fff;
+  }
+}

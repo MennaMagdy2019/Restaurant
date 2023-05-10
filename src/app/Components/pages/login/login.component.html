@@ -1,0 +1,20 @@
+<div class="w-50 m-auto bg-secondary p-5 text-primary">
+  <h1>Registration Form</h1>
+  <form  [formGroup]="loginForm" (ngSubmit)="submitForm()">
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email </label>
+      <input type="email" class="form-control" id="email" formControlName="email" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text" *ngIf="loginForm.controls.email.errors && loginForm.controls.email.touched">email not valid</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">password</label>
+      <input type="text" class="form-control" id="password" formControlName="password" aria-describedby="passworderr">
+      <div id="passworderr" class="form-text" *ngIf="loginForm.controls.password.errors && loginForm.controls.password.touched">password not valid</div>
+    </div>
+
+    <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">login</button>
+    <div class="clear-fix"></div>
+  </form>
+</div>

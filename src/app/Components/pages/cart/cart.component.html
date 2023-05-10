@@ -1,0 +1,119 @@
+<app-title title="Cart Page" margin="1.5rem 0 0 2.5rem"></app-title>
+<app-not-found
+[visible]="!cart || !cart.items.length"
+notFoundMessage="Cart Page Is Empty !"
+resetLinkText="Go To Homepage"
+></app-not-found>
+
+<section *ngIf="cart && cart.items.length" class="container my-5 border-rounded" >
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-2"></div>
+    <div class="col-3"><h4>Product</h4></div>
+    <div class="col-2"><h4>Price</h4></div>
+    <div class="col-2"><h4>Quantity</h4></div>
+    <div class="col-2"><h4>Subtotal</h4></div>
+  </div>
+
+  <div class="row align-items-center py-3" *ngFor="let cartItem of cart.items">
+    <div class="col-1">
+      <div>
+        <button class="text-dark border-none btn-outline-light btn" (click)="removeFromCart(cartItem)">
+          &#x2716;
+        </button>
+      </div>
+    </div>
+    <div class="col-2">
+      <div>
+        <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name" width="75px" class="rounded border-rounded">
+      </div>
+    </div>
+    <div class="col-3">
+      <div>
+        <a routerLink="/food/{{cartItem.food.id}}">
+          {{cartItem.food.name}}
+        </a>
+      </div>
+    </div>
+    <div class="col-2">
+      <div>
+        {{cartItem.food.price}}
+      </div>
+    </div>
+    <div class="col-2"><div>
+      <select #quantitySelect
+       [value]="cartItem.quantity"
+       (change)="changeQunatity(cartItem , quantitySelect.value)"
+      >
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+  </div>
+    <div class="col-2">
+      <div>
+        {{cartItem.price | currency}}
+      </div>
+    </div>
+  </div>
+
+ <div class="row mt-5">
+  <div class="col-7"></div>
+  <div class="col-4 border border-2 p-4 border-secondary">
+    <h4 class="mb-3 pb-2 border border-top-0 border-start-0 border-end-0">SubTotal</h4>
+    <p class="fs-5">Total count :{{cart.totalCount}}</p>
+    <p class="fs-5">Total price : {{cart.totalPrice | currency}} </p>
+
+    <button class="btn btn-secondary">
+      <a routerLink="/checkout" class="text-decoration-none text-primary">Proceed To checkout</a>
+    </button>
+  </div>
+ </div>
+</section>
+
+<!-- <div *ngIf="cart && cart.items.length" class="container" >
+<ul>
+  <li *ngFor="let cartItem of cart.items">
+    <div>
+      <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name">
+    </div>
+    <div>
+      <a routerLink="/food/{{cartItem.food.id}}">
+        {{cartItem.food.name}}
+      </a>
+    </div>
+    <div>
+      <select #quantitySelect
+       [value]="cartItem.quantity"
+       (change)="changeQunatity(cartItem , quantitySelect.value)"
+      >
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div>
+      {{cartItem.price | currency}}
+    </div>
+    <div>
+      <button class="remove-button text-dark" (click)="removeFromCart(cartItem)">
+        Remove
+      </button>
+    </div>
+  </li>
+</ul>
+<div class="checkout">
+  <div>
+    <div>{{cart.totalCount}}</div>
+    <div>{{cart.totalPrice | currency}}</div>
+
+  </div>
+
+  <a routerLink="/checkout">Proceed To checkout</a>
+</div>
+</div> -->

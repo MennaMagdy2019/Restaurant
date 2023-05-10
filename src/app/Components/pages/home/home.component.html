@@ -1,0 +1,44 @@
+<app-search></app-search>
+
+<app-not-found
+[visible]="!foods || !foods.length"
+resetLinkText="Reset Search"
+>
+
+</app-not-found>
+
+<section class="food_menu text-center">
+
+ <div class="container">
+  <div>
+    <h1>Our Food Menu</h1>
+     <p>It’s the story of an everlasting love affair, Dieter Delicioz and the Atlantic Ocean in the big air.</p>
+  </div>
+  <app-tags></app-tags>
+<div class="row text-center">
+  <div class="col-3" *ngFor="let food of foods">
+   <a *ngIf="food.id < '5'" routerLink="/food/{{food.id}}" class="food text-decoration-none text-dark">
+    <div class="mx-2">
+      <img [src]="food.imageUrl" alt="Image" class="Img-fluid" width="300px">
+      <p class="pt-3 m-0">{{food.name}}</p>
+      <!-- <span class="{{food.favorite? 'favorite': 'favorite-not'}}"><i class="fa-solid fa-heart"></i> </span> -->
+      <!-- <p >{{food.stars}}</p> -->
+
+      <star-rating
+       [value]="food.stars"
+       [totalstars]="5"
+      checkedcolor="#DD5903"
+      uncheckedcolor="grey"
+      size="22px"
+      [readonly]="true"
+       ></star-rating>
+      <p class="text-secondary"> {{food.price | currency}}</p>
+      </div>
+   </a>
+  </div>
+ </div>
+ <div><a routerLink="/home" class="tag p-3 border-rounded text-decoration-none m-3">MORE FOODS</a></div>
+ </div>
+
+
+ </section>
