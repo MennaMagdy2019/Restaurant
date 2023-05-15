@@ -1,5 +1,5 @@
-<app-search></app-search>
 
+<app-header></app-header>
 <app-not-found
 [visible]="!foods || !foods.length"
 resetLinkText="Reset Search"
@@ -7,15 +7,23 @@ resetLinkText="Reset Search"
 
 </app-not-found>
 
-<section class="food_menu text-center">
+<section class="food_menu text-center py-5">
 
  <div class="container">
   <div>
     <h1>Our Food Menu</h1>
      <p>It’s the story of an everlasting love affair, Dieter Delicioz and the Atlantic Ocean in the big air.</p>
   </div>
-  <app-tags></app-tags>
-<div class="row text-center">
+  <div class="d-flex justify-content-between align-items-center">
+    <div>
+      <app-tags></app-tags>
+    </div>
+    <div>
+      <app-search></app-search>
+    </div>
+  </div>
+
+<div class="row text-center py-4">
   <div class="col-3" *ngFor="let food of foods">
    <a *ngIf="food.id < '5'" routerLink="/food/{{food.id}}" class="food text-decoration-none text-dark">
     <div class="mx-2">
@@ -37,8 +45,14 @@ resetLinkText="Reset Search"
    </a>
   </div>
  </div>
- <div><a routerLink="/home" class="tag p-3 border-rounded text-decoration-none m-3">MORE FOODS</a></div>
+ <div><a routerLink="/menu" class="tag p-3 border-rounded text-decoration-none m-3 ">MORE FOODS</a></div>
  </div>
 
 
  </section>
+<section class="my-5 container">
+  <div class="d-flex justify-content-between align-items-center p-2" style="background-color:#111111 ;">
+      <h2 class="text-light">Book Your Table Today.</h2>
+    <a routerLink="/book" class="tag p-2 border-rounded text-decoration-none m-3">Book now</a>
+  </div>
+</section>

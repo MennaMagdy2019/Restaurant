@@ -1,5 +1,5 @@
 <div class="w-50 m-auto bg-secondary p-5 text-primary">
-  <h1>Registration Form</h1>
+  <h1 class="text-center">Login Form</h1>
   <form  [formGroup]="loginForm" (ngSubmit)="submitForm()">
 
     <div class="mb-3">
@@ -17,4 +17,5 @@
     <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">login</button>
     <div class="clear-fix"></div>
   </form>
+  <a routerLink="/register">create New Account?</a>
 </div>

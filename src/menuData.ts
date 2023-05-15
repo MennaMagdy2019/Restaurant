@@ -1,6 +1,7 @@
 
 import { Food } from "./app/models/Food";
 import { Tag } from "./app/models/Tag";
+import { Table } from "./app/models/Table";
 
 export const sample_foods: Food[]=[
   {
@@ -98,3 +99,10 @@ export const sample_Tags:Tag[] = [
   {name:"Dinner",count:6},
   {name:"Lunch",count:5}
 ]
+
+export let booking_table:Table[] = [
+ // {first_name:"menna",last_name:"magdy",},
+ {date:"2023-05-15",email:"menna.88@yahoo.com",first_name:"Menna"
+ ,last_name:" Magdy",persons:3,phone:"05039033066",time:"03:28"}
+]
+

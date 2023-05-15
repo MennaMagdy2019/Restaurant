@@ -19,8 +19,12 @@ export class LoginComponent {
   submitForm(){
    if(this.loginForm.invalid) return;
    this._authServive.login(this.loginForm.value).subscribe((data => {
-     if(data.message == 'success')
-           this._router.navigateByUrl('/home');
+     if(data.message == 'success'){
+      // set token in local storage
+      localStorage.setItem('userToken', data.token)
+      this._authServive.saveUserData()
+      this._router.navigateByUrl('/home');
+     }
      else{
        alert(data.message)
      }

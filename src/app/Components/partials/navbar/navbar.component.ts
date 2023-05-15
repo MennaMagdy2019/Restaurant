@@ -10,33 +10,39 @@ import { AuthService } from 'src/app/Services/auth.service';
 })
 export class NavbarComponent implements OnInit {
   isUserLogged:boolean = false;
-  cartQuantity = 0;
-  constructor(private _cartService:CartService , private authService : UserAuthService ){
 
-  //  console.log(this.isUserLogged)
+  isLoggedIn: boolean = false;
+  cartQuantity = 0;
+  constructor(private _cartService:CartService , private _authService : AuthService ,private authService : UserAuthService ){}
+  //  console.log(this.isUserLogged)}
+
+  logout(){
+    this._authService.logout();
   }
   ngOnInit(): void {
    this._cartService.getCartObservable().subscribe((newCart) => {
      this.cartQuantity = newCart.totalCount
    })
-//////authentication User 
+
+//////authentication User
    this.authService.getLoggedStatus().subscribe(status =>{
     this.isUserLogged = status
     console.log(this.isUserLogged)
    })
 
     this.isUserLogged = this.authService.isUserLogged
+
+    //////////////////authenication
+    this._authService.userData.subscribe(()=>{
+      if(this._authService.userData.getValue()){
+        this.isLoggedIn = true
+      }
+      else{
+        this.isLoggedIn = false
+      }
+    })
   }
 
-
-  login(){
-    this.authService.login('UserName' , 'Password');
-    this.isUserLogged = this.authService.isUserLogged
-  }
-  logout(){
-    this.authService.logout();
-    this.isUserLogged = this.authService.isUserLogged
-  }
 }
 
 

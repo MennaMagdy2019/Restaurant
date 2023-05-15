@@ -11,8 +11,6 @@ import { FooterComponent } from './Components/partials/footer/footer.component';
 import { NavbarComponent } from './Components/partials/navbar/navbar.component';
 import { HomeComponent } from './Components/pages/home/home.component';
 import { MenuComponent } from './Components/pages/menu/menu.component';
-import { ContactComponent } from './Components/pages/contact/contact.component';
-import { AboutComponent } from './Components/pages/about/about.component';
 import { MenudetailsComponent } from './Components/pages/menudetails/menudetails.component';
 import { ErrorComponent } from './Components/pages/error/error.component';
 import { CartComponent } from './Components/pages/cart/cart.component';
@@ -26,6 +24,9 @@ import { TitleComponent } from './Components/partials/title/title.component';
 import { NotFoundComponent } from './Components/partials/not-found/not-found.component';
 import { RegisterComponent } from './Components/pages/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MainLayoutComponent } from './Components/pages/main-layout/main-layout.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { BookingTableComponent } from './booking-table/booking-table.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +36,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     HomeComponent,
     MenuComponent,
-    ContactComponent,
-    AboutComponent,
     MenudetailsComponent,
     ErrorComponent,
     CartComponent,
@@ -47,7 +46,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     FoodPageComponent,
     TitleComponent,
     NotFoundComponent,
-    RegisterComponent
+    RegisterComponent,
+    MainLayoutComponent,
+    CheckoutComponent,
+    BookingTableComponent
   ],
   imports: [
     BrowserModule,

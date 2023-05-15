@@ -1,8 +1,9 @@
-<div>
+<div >
   <input #s type="text" placeholder="Search Food Mine!"
   (keyup.enter)="search(s.value)"
   [value]="searchTerm"
+  class="py-1"
   />
 
-  <button (click)="search(s.value)">Search</button>
+  <button (click)="search(s.value)" class="py-1 btn btn-secondary outline-none text-white">Search</button>
 </div>

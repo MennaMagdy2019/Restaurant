@@ -1,3 +1,4 @@
+
 .favorite
 {
   color: red;
@@ -14,10 +15,11 @@ transform: scale(0.95);
 }
 
 .tag{
-  color: black;
-  background-color: #fff;
+  background-color: #DD5903;
+  color:#fff;
   &:hover{
-    background-color: #DD5903;
-    color:#fff;
+    color: #DD5903;
+    background-color:#fff;
+    border: 1px solid #DD5903;
   }
 }

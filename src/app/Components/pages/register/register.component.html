@@ -1,5 +1,5 @@
-<div class="w-50 m-auto bg-secondary p-5 text-primary">
-  <h1>Registration Form</h1>
+<div class="w-50 m-auto bg-secondary p-5 text-primary" style="padding-top: 200px;">
+  <h1 class="text-center">Registration Form</h1>
   <form  [formGroup]="registerForm" (ngSubmit)="submitForm()">
     <div class="mb-3">
       <label for="firstName" class="form-label">First Name</label>
@@ -13,24 +13,11 @@
       <div id="lastNameerr" class="form-text" *ngIf="registerForm.controls.last_name.errors && registerForm.controls.last_name.touched">Last Name not valid</div>
     </div>
 
-    <!-- <div class="mb-3">
-      <label for="phone" class="form-label">Phone</label>
-      <input type="text" class="form-control" id="phone" formControlName="phone" aria-describedby="phoneerr">
-      <div id="phoneerr" class="form-text"*ngIf="registerForm.controls.phone.errors && registerForm.controls.phone.touched">Phone not valid</div>
-    </div> -->
-
     <div class="mb-3">
       <label for="email" class="form-label">Email</label>
       <input type="email" class="form-control" id="email" formControlName="email" aria-describedby="emailHelp">
       <div id="emailHelp" class="form-text" *ngIf="registerForm.controls.email.errors && registerForm.controls.email.touched">email not valid</div>
     </div>
-    
-    <div class="mb-3">
-      <label for="age" class="form-label">age</label>
-      <input type="number" class="form-control" id="age" formControlName="age" aria-describedby="ageerr">
-      <div id="ageerr" class="form-text" *ngIf="registerForm.controls.age.errors && registerForm.controls.age.touched">age not valid</div>
-    </div>
-
 
     <div class="mb-3">
       <label for="password" class="form-label">password</label>
@@ -41,4 +28,6 @@
     <button [disabled]="registerForm.invalid" type="submit" class="btn btn-primary">Register</button>
     <div class="clear-fix"></div>
   </form>
+  <a routerLink="/login">Already have Account?</a>
+
 </div>

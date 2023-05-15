@@ -1,0 +1,53 @@
+<app-header></app-header>
+<div class="w-75 m-auto p-5 text-primary" style="padding-top: 200px; background-color: #6e6969;">
+  <h1 class="text-center">Booking Form</h1>
+  <form  [formGroup]="bookingForm" (ngSubmit)="submitForm()" class="row text-primary">
+    <div class="mb-3 col-4">
+      <label for="persons" class="form-label">NUMBER OF GUEST</label>
+      <input type="number" class="form-control" id="persons" formControlName="persons">
+      <div id="personsarr" class="form-text" *ngIf="bookingForm.controls.persons.errors && bookingForm.controls.persons.touched">
+        Persons</div>
+    </div>
+    <div class="mb-3 col-4">
+      <label for="date" class="form-label">Select Date</label>
+      <input type="date" class="form-control" id="date" formControlName="date">
+      <div id="datearr" class="form-text text-primary" *ngIf="bookingForm.controls.date.errors && bookingForm.controls.date.touched">
+        Date</div>
+    </div>
+    <div class="mb-3 col-4">
+      <label for="time" class="form-label">Select time</label>
+      <input type="time" class="form-control" id="time" formControlName="time">
+      <div id="timearr" class="form-text text-danger" *ngIf="bookingForm.controls.time.errors && bookingForm.controls.time.touched">
+        Time</div>
+    </div>
+    <div class="mb-3">
+      <label for="firstName" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="firstName" formControlName="first_name" aria-describedby="firstNameerr">
+      <div id="firstNameerr" class="form-text text-danger" *ngIf="bookingForm.controls.first_name.errors && bookingForm.controls.first_name.touched">
+        First Name not valid</div>
+    </div>
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input type="text" class="form-control" id="lastName" formControlName="last_name" aria-describedby="lastNameerr">
+      <div id="lastNameerr" class="form-text text-danger" *ngIf="bookingForm.controls.last_name.errors && bookingForm.controls.last_name.touched">Last Name not valid</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone</label>
+      <input type="text" class="form-control" id="phone" formControlName="phone" aria-describedby="phoneerr">
+      <div id="phoneerr" class="form-text text-danger"*ngIf="bookingForm.controls.phone.errors && bookingForm.controls.phone.touched">Phone not valid</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" formControlName="email" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text text-danger" *ngIf="bookingForm.controls.email.errors && bookingForm.controls.email.touched">email not valid</div>
+    </div>
+    <div class="clear-fix"></div>
+    <button  [disabled]="bookingForm.invalid" type="submit" class="tag p-3 border-rounded text-decoration-none col-4 m-auto" [ngStyle]="{'opacity':bookingForm.invalid ? .5:1}" >Booking</button>
+
+  </form>
+
+  <!-- <a routerLink="/home" role="button" class="mt-3">Go To Home</a> -->
+
+</div>
