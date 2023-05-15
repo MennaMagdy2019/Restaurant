@@ -1,0 +1,17 @@
+.tags
+{
+  margin: 5px;
+  a{
+    text-decoration: none;
+    border: 1px solid #DD5903;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    display: inline-block;
+    &:hover{
+     background-color: #DD5903;
+     color:#fff;
+    }
+  }
+}
+

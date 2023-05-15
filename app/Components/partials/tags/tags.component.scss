@@ -1,0 +1,9 @@
+@import "../../../../styles.scss";
+.tag{
+  color: black;
+  background-color: $primary;
+  &:hover{
+    background-color: $secondary;
+    color:$primary;
+  }
+}

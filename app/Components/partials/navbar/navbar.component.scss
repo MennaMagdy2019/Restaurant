@@ -1,0 +1,18 @@
+// .custom-nav
+// {
+//   background-color: var(--primary-color);
+// }
+@import '../../../../styles.scss';
+.menu {
+  background: transparent;
+  a{
+      color:$primary;
+      font-weight: 500;
+      &:hover{
+          color:$secondary;
+      }
+
+  }
+  .active{ color:$secondary !important;}
+
+}
